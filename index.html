@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#faf9f6" />
+  <title>Studio Name — Analog Photography Prints</title>
+  <meta name="description" content="Made-to-order prints from original analog photographs. Hand-printed, archival, shipped from Portugal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400..500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="site-header__mark">Studio Name</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <nav>
+      <ul class="site-nav" id="primary-nav">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="prints.html">Photos / Prints</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" style="padding:0; border-bottom:none;">
+      <div class="hero__frame">
+        <!-- Replace with your chosen hero photograph -->
+        <div class="hero__placeholder">HERO IMAGE<br />Replace with a full-bleed analog photograph (portrait or landscape orientation, high resolution)</div>
+      </div>
+      <div class="hero__caption">
+        <div>
+          <h1>Light, held still.</h1>
+          <p>Original analog photographs, printed to order and shipped from Portugal.</p>
+        </div>
+        <a href="prints.html" class="btn btn--primary">View the prints</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section__head">
+        <h2>Recent work</h2>
+        <a href="prints.html" class="text-link">See all prints</a>
+      </div>
+      <div class="gallery">
+        <a href="product.html" class="gallery__item gallery__item--wide">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">Photo 01</div>
+          </div>
+          <div class="gallery__meta">
+            <div>
+              <div class="gallery__title">Untitled, Alentejo</div>
+              <div class="gallery__sub">Kodak Portra 400</div>
+            </div>
+            <div class="gallery__price">from €95</div>
+          </div>
+        </a>
+        <a href="product.html" class="gallery__item gallery__item--narrow">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">Photo 02</div>
+          </div>
+          <div class="gallery__meta">
+            <div>
+              <div class="gallery__title">Low Tide</div>
+              <div class="gallery__sub">Ilford HP5</div>
+            </div>
+            <div class="gallery__price">from €95</div>
+          </div>
+        </a>
+        <a href="product.html" class="gallery__item gallery__item--narrow">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">Photo 03</div>
+          </div>
+          <div class="gallery__meta">
+            <div>
+              <div class="gallery__title">Stairwell, Lisbon</div>
+              <div class="gallery__sub">Kodak Tri-X 400</div>
+            </div>
+            <div class="gallery__price">from €95</div>
+          </div>
+        </a>
+        <a href="product.html" class="gallery__item gallery__item--wide">
+          <div class="gallery__frame">
+            <div class="gallery__placeholder">Photo 04</div>
+          </div>
+          <div class="gallery__meta">
+            <div>
+              <div class="gallery__title">Field Study II</div>
+              <div class="gallery__sub">Kodak Portra 160</div>
+            </div>
+            <div class="gallery__price">from €95</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="about">
+        <div class="about__portrait">
+          <div class="hero__placeholder" style="border-color:var(--line); color:var(--stone);">Portrait or process photo</div>
+        </div>
+        <div>
+          <h2>Made to order, printed with care</h2>
+          <p>Every print is produced only once it's ordered — no stock, no waste. Each one is made individually on archival paper, checked by hand, and packaged for safe travel from our studio in Portugal to yours.</p>
+          <a href="about.html" class="text-link">Read the full story</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__mark">Studio Name</div>
+      <p class="site-footer__about">Original analog photography, printed to order. Based in Portugal, shipping worldwide.</p>
+    </div>
+    <div>
+      <h3>Shop</h3>
+      <ul class="footer-links">
+        <li><a href="prints.html">Photos / Prints</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Information</h3>
+      <ul class="footer-links">
+        <li><a href="shipping-refunds.html">Shipping &amp; Refunds</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__bottom">
+      © <span id="year"></span> Studio Name. All prints made to order in Portugal.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

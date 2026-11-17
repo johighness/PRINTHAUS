@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#faf9f6" />
+  <title>About — Studio Name</title>
+  <meta name="description" content="The story and process behind the studio — analog photography, printed to order." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400..500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="site-header__mark">Studio Name</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <nav>
+      <ul class="site-nav" id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prints.html">Photos / Prints</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <div class="about">
+        <div class="about__portrait">
+          <div class="hero__placeholder" style="border-color:var(--line); color:var(--stone);">Portrait, or a photo of the process — camera, darkroom, contact sheet</div>
+        </div>
+        <div>
+          <h2>About</h2>
+          <!--
+            PLACEHOLDER COPY — replace with the real artist statement.
+            Suggested structure: how you started shooting film, what draws
+            you to it, how you work (cameras/film stocks), how prints are
+            made. Keep it in your own voice; this is just scaffolding.
+          -->
+          <p>I've been shooting on film for [X years], mostly on [camera / film stocks]. There's a slowness to analog work that shapes what I point the camera at — fewer frames, more attention to each one.</p>
+          <p>Every print in this shop starts as a negative, scanned and color-corrected by hand, then printed only once someone orders it. Nothing is kept in stock. Each print is checked individually before it ships.</p>
+          <p>I'm based in Portugal, and every print ships from here, tracked and insured.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section__head">
+        <h2>Process</h2>
+      </div>
+      <p style="color: var(--ink-soft);">A short note on materials and process — paper stock, print lab or darkroom, how color is matched to the original negative, and how long printing takes. Replace this with real detail once Phase 1 content is finalized.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__mark">Studio Name</div>
+      <p class="site-footer__about">Original analog photography, printed to order. Based in Portugal, shipping worldwide.</p>
+    </div>
+    <div>
+      <h3>Shop</h3>
+      <ul class="footer-links">
+        <li><a href="prints.html">Photos / Prints</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Information</h3>
+      <ul class="footer-links">
+        <li><a href="shipping-refunds.html">Shipping &amp; Refunds</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__bottom">
+      © <span id="year"></span> Studio Name. All prints made to order in Portugal.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

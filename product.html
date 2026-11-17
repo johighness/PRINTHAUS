@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#faf9f6" />
+  <title>Untitled, Alentejo — Studio Name</title>
+  <meta name="description" content="Made-to-order print. Archival paper, hand-checked, shipped from Portugal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..500;1,6..96,400..500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="site-header__mark">Studio Name</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+    <nav>
+      <ul class="site-nav" id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prints.html" aria-current="page">Photos / Prints</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!--
+      PRODUCT PAGE TEMPLATE — duplicate this file per photograph
+      (e.g. product-untitled-alentejo.html) and update:
+        - title / meta description
+        - image placeholder
+        - title, metadata line, description
+        - size/paper option pills (aria-pressed="true" on the default)
+        - the Stripe button/link in .product__cta
+    -->
+    <div class="product">
+      <div class="product__frame">
+        <div class="hero__placeholder" style="border-color:var(--line); color:var(--stone);">Product photograph<br />(the print itself, well lit, true to color)</div>
+      </div>
+
+      <div class="product__info">
+        <h1>Untitled, Alentejo</h1>
+        <p class="product__meta">Kodak Portra 400 · 2024 · Edition of 50 per size</p>
+
+        <p>Shot at first light in the Alentejo countryside, on Portra 400 for its warmth in low sun. Printed only once ordered — no two prints leave the studio on the same day.</p>
+
+        <div class="product__price">€95</div>
+
+        <div class="option-group">
+          <span class="option-group__label">Size</span>
+          <div class="option-pills" role="group" aria-label="Size">
+            <button type="button" class="option-pill" aria-pressed="true">30 × 40 cm</button>
+            <button type="button" class="option-pill" aria-pressed="false">40 × 50 cm</button>
+            <button type="button" class="option-pill" aria-pressed="false">50 × 70 cm</button>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <span class="option-group__label">Paper</span>
+          <div class="option-pills" role="group" aria-label="Paper">
+            <button type="button" class="option-pill" aria-pressed="true">Matte archival</button>
+            <button type="button" class="option-pill" aria-pressed="false">Lustre</button>
+          </div>
+        </div>
+
+        <div class="option-group">
+          <span class="option-group__label">Frame</span>
+          <div class="option-pills" role="group" aria-label="Frame">
+            <button type="button" class="option-pill" aria-pressed="true">Unframed</button>
+            <button type="button" class="option-pill" aria-pressed="false">Oak frame</button>
+            <button type="button" class="option-pill" aria-pressed="false">Black frame</button>
+          </div>
+        </div>
+
+        <div class="product__cta">
+          <!--
+            STRIPE INTEGRATION POINT
+            Once the Stripe account is connected, replace this <a> with
+            either:
+              a) a Stripe Payment Link (simplest — one per size/paper/frame
+                 combination, or one Payment Link with variant prices), or
+              b) an embedded Stripe Checkout button (stripe-buy-button
+                 custom element) if you want it to stay on-page.
+            For now this links nowhere — it's a placeholder for that step.
+          -->
+          <a href="#" class="btn btn--primary" aria-disabled="true">Buy print — connect Stripe to enable</a>
+        </div>
+
+        <p class="product__note">Made to order. Printing and dispatch takes 5–10 working days. Shipped tracked and insured from Portugal — see <a href="shipping-refunds.html" class="text-link">Shipping &amp; Refunds</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="site-footer__mark">Studio Name</div>
+      <p class="site-footer__about">Original analog photography, printed to order. Based in Portugal, shipping worldwide.</p>
+    </div>
+    <div>
+      <h3>Shop</h3>
+      <ul class="footer-links">
+        <li><a href="prints.html">Photos / Prints</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Information</h3>
+      <ul class="footer-links">
+        <li><a href="shipping-refunds.html">Shipping &amp; Refunds</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__bottom">
+      © <span id="year"></span> Studio Name. All prints made to order in Portugal.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

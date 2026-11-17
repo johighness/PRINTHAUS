@@ -1,0 +1,635 @@
+/* ==========================================================================
+   Design tokens
+   -------------------------------------------------------------------------
+   Paper / ink palette, no color accent competing with the photographs.
+   Brass used only as a rare, deliberate micro-accent (price tags, focus
+   states) — a nod to frame hardware and vintage camera fittings.
+   ========================================================================== */
+
+:root {
+  --paper: #faf9f6;
+  --paper-dim: #f2efe9;
+  --ink: #17120f;
+  --ink-soft: #3a342e;
+  --stone: #8a8477;
+  --line: #ddd7ca;
+  --brass: #8c6a42;
+  --brass-dim: #b89b73;
+
+  --font-display: "Bodoni Moda", "Times New Roman", serif;
+  --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --measure: 62ch;
+  --gutter: clamp(1.5rem, 5vw, 4rem);
+  --section-gap: clamp(4rem, 10vw, 9rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: 0.002em;
+}
+
+p {
+  margin: 0 0 1em;
+  max-width: var(--measure);
+}
+
+/* ==========================================================================
+   Header / nav
+   ========================================================================== */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header__mark {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.site-nav {
+  display: flex;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.site-nav a:hover {
+  color: var(--ink);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom: 1px solid var(--brass);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--ink);
+  margin: 5px 0;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    flex-direction: column;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .site-nav.is-open {
+    max-height: 240px;
+  }
+
+  .site-nav a {
+    padding: 1rem var(--gutter);
+    display: block;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+  }
+
+  .site-header {
+    position: relative;
+    z-index: 20;
+  }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.hero {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 86vh;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 62vh;
+  }
+}
+
+.hero__frame {
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--stone);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__placeholder {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 2rem;
+  border: 1px dashed #4a433b;
+  margin: 2rem;
+}
+
+.hero__caption {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem var(--gutter);
+  flex-wrap: wrap;
+}
+
+.hero__caption h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  max-width: 14ch;
+}
+
+.hero__caption p {
+  color: var(--stone);
+  font-size: 1rem;
+  margin: 0.75rem 0 0;
+}
+
+/* ==========================================================================
+   Buttons / links
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.85rem 1.75rem;
+  min-height: 44px;
+  box-sizing: border-box;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn--primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn--primary:hover {
+  background: var(--brass);
+  border-color: var(--brass);
+}
+
+.text-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+
+.text-link:hover {
+  text-decoration-color: var(--ink);
+}
+
+/* ==========================================================================
+   Sections / layout helpers
+   ========================================================================== */
+
+section {
+  padding: var(--section-gap) var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+.section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  flex-wrap: wrap;
+}
+
+.section__head h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+/* ==========================================================================
+   Gallery grid (asymmetric — not a uniform product-card kit)
+   ========================================================================== */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.gallery__item {
+  text-decoration: none;
+  color: inherit;
+  grid-column: span 3;
+}
+
+.gallery__item--wide {
+  grid-column: span 4;
+}
+
+.gallery__item--narrow {
+  grid-column: span 2;
+}
+
+@media (max-width: 860px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery__item,
+  .gallery__item--wide,
+  .gallery__item--narrow {
+    grid-column: span 2;
+  }
+}
+
+.gallery__frame {
+  background: var(--paper-dim);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+}
+
+.gallery__item--wide .gallery__frame {
+  aspect-ratio: 3 / 2;
+}
+
+.gallery__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery__item:hover .gallery__frame img {
+  transform: scale(1.015);
+}
+
+.gallery__placeholder {
+  font-size: 0.75rem;
+  color: var(--stone);
+  text-align: center;
+  padding: 1rem;
+  border: 1px dashed var(--line);
+  margin: 1.5rem;
+}
+
+.gallery__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  gap: 1rem;
+}
+
+.gallery__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.gallery__price {
+  color: var(--brass);
+  white-space: nowrap;
+}
+
+.gallery__sub {
+  color: var(--stone);
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Product page
+   ========================================================================== */
+
+.product {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: var(--section-gap) var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 860px) {
+  .product {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product__frame {
+  background: var(--paper-dim);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product__info h1 {
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  margin-bottom: 0.5rem;
+}
+
+.product__meta {
+  color: var(--stone);
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+}
+
+.product__price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--brass);
+  margin: 1.5rem 0;
+}
+
+.option-group {
+  margin-bottom: 1.75rem;
+}
+
+.option-group__label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--stone);
+  margin-bottom: 0.65rem;
+}
+
+.option-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.option-pill {
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 0.55rem 1.1rem;
+  min-height: 44px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.option-pill[aria-pressed="true"] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.product__cta {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.product__note {
+  font-size: 0.85rem;
+  color: var(--stone);
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about__portrait {
+  background: var(--paper-dim);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Simple text pages (legal, shipping, etc.)
+   ========================================================================== */
+
+.text-page {
+  padding: var(--section-gap) var(--gutter);
+  max-width: 68ch;
+  margin: 0 auto;
+}
+
+.text-page h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 0.5rem;
+}
+
+.text-page .updated {
+  color: var(--stone);
+  font-size: 0.85rem;
+  margin-bottom: 3rem;
+}
+
+.text-page h2 {
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.text-page p,
+.text-page li {
+  color: var(--ink-soft);
+}
+
+.text-page ul {
+  padding-left: 1.2rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  padding: clamp(2.5rem, 6vw, 4rem) var(--gutter) 2.5rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 720px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.site-footer h3 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--stone);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.site-footer__mark {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer__about {
+  color: var(--stone);
+  font-size: 0.9rem;
+  max-width: 32ch;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.footer-links a:hover {
+  color: var(--ink);
+}
+
+.site-footer__bottom {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--stone);
+  font-size: 0.8rem;
+}
